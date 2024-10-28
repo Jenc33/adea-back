@@ -1,0 +1,37 @@
+CREATE TABLE IF NOT EXISTS `Usuario` (
+  `login` VARCHAR(20) NOT NULL,
+  `password` VARCHAR(30) NOT NULL,
+  `nombre` VARCHAR(50) NOT NULL,
+  `cliente` FLOAT NOT NULL,
+  `email` VARCHAR(50) NULL,
+  `fechaalta` DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  `fechabaja` DATETIME NULL,
+  `status` CHAR(1) NOT NULL DEFAULT 'A',
+  `intentos` INT NOT NULL DEFAULT 0,
+  `fecharevocado` DATETIME NULL,
+  `fecha_vigencia` DATETIME NULL,
+  `no_acceso` INT NULL,
+  `apellido_paterno` VARCHAR(50) NULL,
+  `apellido_materno` VARCHAR(50) NULL,
+  `area` INT NULL,
+  `fechamodificacion` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`login`))
+ENGINE = InnoDB
+
+INSERT INTO `userschema`.`usuario`
+(`login`,
+`password`,
+`nombre`,
+`cliente`,
+`email`,
+`fechaalta`,
+`fechabaja`,
+`status`,
+`intentos`,
+`fecharevocado`,
+`fecha_vigencia`,
+`no_acceso`,
+`apellido_paterno`,
+`apellido_materno`,
+`area`,
+`fechamodificacion`) VALUES ('admin', 'cGFzc3dvcmQ=', 'Jorge', 1, 'jorgeelihu33@gmail.com', DEFAULT, NULL, 'A', DEFAULT, NULL, '2024-11-01 00:00:00', 0, 'Nieto', 'Cervantes', 1, DEFAULT);
